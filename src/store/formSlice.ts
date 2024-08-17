@@ -6,16 +6,14 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // 表单元素
 interface FormElement {
-  id: String,
-  type: String,
-  label: String,
-  value: String,
-  placeholder: String,
-  required: Boolean,
-  options?: Array<String>,
+  id: string,
+  type: string,
+  label: string,
+  value: string,
+  options?: Array<string>,
 }
 
-// 表单状态
+// 表单
 interface FormState {
   elements: FormElement[]
 }
@@ -44,5 +42,5 @@ const formSlice = createSlice({
   }
 })
 
-export const { addElement, removeElement, updateElement} = formSlice.actions
+export const { addElement, removeElement, updateElement } = formSlice.actions
 export default formSlice.reducer
