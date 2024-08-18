@@ -1,0 +1,71 @@
+// SASS 变量
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$border-radius: 4px;
+$input-padding: 8px;
+$input-border: 1px solid #ccc;
+$input-focus-border: 1px solid $primary-color;
+$background-color: #f4f4f4;
+
+.form-configurator {
+  background-color: $background-color;
+  padding: 20px;
+  border-radius: $border-radius;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+
+  h2 {
+    margin-bottom: 15px;
+    color: $primary-color;
+  }
+
+  .config-group {
+    margin-bottom: 20px;
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+      color: #333;
+    }
+
+    input,
+    select {
+      box-sizing: border-box;
+      width: 100%;
+      padding: $input-padding;
+      font-size: 14px;
+      border: $input-border;
+      border-radius: $border-radius;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border: $input-focus-border;
+        outline: none;
+      }
+    }
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #fff;
+    background-color: $primary-color;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
+
+    &.remove-button {
+      background-color: #e74c3c;
+
+      &:hover {
+        background-color: darken(#e74c3c, 10%);
+      }
+    }
+  }
+}

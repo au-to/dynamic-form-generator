@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addElement } from '../store/formSlice';
+import { addElement } from '../../store/formSlice';
 import { v4 as uuidv4 } from 'uuid';
-import './FormConfigurator.scss';
+import './index.scss';
 
 const FormConfigurator: React.FC = () => {
   const [type, setType] = useState('text');
@@ -31,9 +31,8 @@ const FormConfigurator: React.FC = () => {
 
   return (
     <div className='form-configurator'>
-      <h2>配置：</h2>
       {/* 选择元素类型 */}
-      <div className='ele-contanner'>
+      <div className='config-group'>
         <label>元素类型：</label>
         <select value={type} onChange={(e) => setType(e.target.value)}>
           <option value="text">Text</option>
@@ -44,14 +43,14 @@ const FormConfigurator: React.FC = () => {
         </select>
       </div>
       {/* 设置标签内容 */}
-      <div className='ele-contanner'>
+      <div className='config-group'>
         <label>标签：</label>
         <input type="text" value={label} onChange={(e) => setLabel(e.target.value)} />
       </div>
       {/* 下拉特殊处理 */}
       {(type === 'select') && (
-        <div className='ele-contanner'>
-          <label>Options (comma separated): </label>
+        <div className='config-group'>
+          <label>Options (逗号分隔)：</label>
           <input type="text" onChange={(e) => handleOptions(e)} />
         </div>
       )}

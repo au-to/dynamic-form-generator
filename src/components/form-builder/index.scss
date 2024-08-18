@@ -1,0 +1,120 @@
+// SASS 变量
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$border-radius: 4px;
+$input-padding: 10px;
+$input-border: 1px solid #ccc;
+$input-focus-border: 1px solid $primary-color;
+
+.form-builder {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  max-width: 500px; // 限制表单的最大宽度以保持整洁
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: $border-radius;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+
+  .form-element {
+    margin-bottom: 20px;
+
+    &:hover {
+      background-color: #f8f9fa;
+      border-color: #007bff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+    }
+
+    &.selected {
+      border-color: #007bff;
+      background-color: #e7f3ff;
+      transform: translateY(-4px);
+      box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 8px;
+      display: block;
+      color: $primary-color;
+    }
+
+    input,
+    select,
+    textarea {
+      box-sizing: border-box;
+      width: 100%;
+      padding: $input-padding;
+      font-size: 16px;
+      border: $input-border;
+      border-radius: $border-radius;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border: $input-focus-border;
+        outline: none;
+      }
+    }
+
+    .delete-button {
+      border-radius: 50%;
+      position: absolute;
+      top: 28px;
+      right: -35px;
+      background: none;
+      border: none;
+      color: #ff5c5c;
+      font-size: 18px;
+      cursor: pointer;
+      visibility: hidden;
+      transition: visibility 0.2s ease;
+
+      &:hover {
+        color: #ff0000;
+      }
+    }
+
+    &:hover .delete-button {
+      visibility: visible;
+    }
+  }
+
+  .special-element {
+    label {
+      display: inline-block;
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    input {
+      display: inline-block;
+      width: 20px;
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    .delete-button {
+      top: -4px;
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: $primary-color;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+
+
+}
